@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clients - LicensePro Admin</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="clients.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo-icon">
+                <i class="bi bi-shield-check"></i>
+            </div>
+            <div class="sidebar-title-group">
+                <span class="sidebar-title">LicensePro</span>
+                <span class="sidebar-title">Admin</span>
+                <span class="sidebar-subtitle">Enterprise Console</span>
+            </div>
+        </div>
+        <div class="sidebar-nav">
+            <a href="#" class="nav-item-link">
+                <i class="bi bi-grid-1x2"></i> Dashboard
+            </a>
+            <a href="licence.html" class="nav-item-link">
+                <i class="bi bi-key"></i> Licenses
+            </a>
+            <a href="#" class="nav-item-link">
+                <i class="bi bi-people"></i> Users
+            </a>
+            <a href="clients.html" class="nav-item-link active">
+                <i class="bi bi-buildings"></i> Clients
+            </a>
+        </div>
+    </div>
+
+    <!-- Top Navbar -->
+    <div class="top-navbar">
+        <div class="d-flex align-items-center">
+            <span class="navbar-brand-text">LicensePro</span>
+            <div class="search-container">
+                <i class="bi bi-search"></i>
+                <input type="text" class="search-input" placeholder="Search...">
+            </div>
+        </div>
+        <div class="top-nav-icons">
+            <i class="bi bi-bell"></i>
+            <i class="bi bi-question-circle"></i>
+            <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="User" class="user-avatar">
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="page-header">
+            <div>
+                <h1 class="page-title">Client Directory</h1>
+                <p class="page-subtitle">Manage organization profiles and active license counts.</p>
+            </div>
+            <div>
+                <button class="btn-primary-custom">
+                    <i class="bi bi-plus" style="margin-right: 2px;"></i> Register Client
+                </button>
+            </div>
+        </div>
+
+        <div class="toolbar">
+            <div class="toolbar-search">
+                <i class="bi bi-search"></i>
+                <input type="text" placeholder="Search clients by name or industry...">
+            </div>
+            <div class="toolbar-actions">
+                <div class="dropdown">
+                    <button class="btn-outline" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        All Statuses <i class="bi bi-chevron-down ms-2" style="font-size: 10px;"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">All Statuses</a></li>
+                        <li><a class="dropdown-item" href="#">Active</a></li>
+                        <li><a class="dropdown-item" href="#">Over Limit</a></li>
+                    </ul>
+                </div>
+                <button class="btn-outline">
+                    <i class="bi bi-filter"></i> Filters
+                </button>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Card 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="client-card">
+                    <div class="client-header">
+                        <div class="client-logo-wrapper">
+                            <div class="client-logo bg-blue-light">AC</div>
+                            <div class="client-info">
+                                <h3>Acme Corp</h3>
+                                <p>Technology Sector</p>
+                            </div>
+                        </div>
+                        <span class="badge-status badge-active">Active</span>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-label">Total Licenses</div>
+                            <div class="stat-value">1,250</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Active Users</div>
+                            <div class="stat-value">1,180</div>
+                        </div>
+                    </div>
+                    
+                    <div class="utilization">
+                        <div class="utilization-header">
+                            <span>Utilization</span>
+                            <span class="util-val">94%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 94%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="bi bi-person"></i>
+                            <span>Jane Doe (Primary Admin)</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-envelope"></i>
+                            <span>admin@acmecorp.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-action">
+                        <a href="#">View Client Details <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="client-card">
+                    <div class="client-header">
+                        <div class="client-logo-wrapper">
+                            <div class="client-logo bg-blue-light">GL</div>
+                            <div class="client-info">
+                                <h3>Global Logistics</h3>
+                                <p>Transportation</p>
+                            </div>
+                        </div>
+                        <span class="badge-status badge-active">Active</span>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-label">Total Licenses</div>
+                            <div class="stat-value">850</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Active Users</div>
+                            <div class="stat-value">420</div>
+                        </div>
+                    </div>
+                    
+                    <div class="utilization">
+                        <div class="utilization-header">
+                            <span>Utilization</span>
+                            <span class="util-val">49%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 49%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="bi bi-person"></i>
+                            <span>Robert Smith</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-envelope"></i>
+                            <span>it@globallogistics.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-action">
+                        <a href="#">View Client Details <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="client-card">
+                    <div class="client-header">
+                        <div class="client-logo-wrapper">
+                            <div class="client-logo bg-gray-light">HN</div>
+                            <div class="client-info">
+                                <h3>HealthNet Systems</h3>
+                                <p>Healthcare</p>
+                            </div>
+                        </div>
+                        <span class="badge-status badge-danger">Over Limit</span>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-label">Total Licenses</div>
+                            <div class="stat-value">500</div>
+                        </div>
+                        <div class="stat-box danger">
+                            <div class="stat-label">Active Users</div>
+                            <div class="stat-value">512</div>
+                        </div>
+                    </div>
+                    
+                    <div class="utilization">
+                        <div class="utilization-header danger">
+                            <span>Utilization</span>
+                            <span class="util-val">102%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill danger" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="bi bi-person"></i>
+                            <span>Sarah Jenkins</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-envelope"></i>
+                            <span>sysadmin@healthnet.org</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-action">
+                        <a href="#">View Client Details <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination-footer">
+            <span>Showing 1-3 of 45 clients</span>
+            <div class="pagination-controls">
+                <button class="btn-page"><i class="bi bi-chevron-left" style="font-size: 10px;"></i></button>
+                <button class="btn-page"><i class="bi bi-chevron-right" style="font-size: 10px;"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="clients.js"></script>
+</body>
+</html>
