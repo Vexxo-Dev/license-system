@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licenses - LicensePro Admin</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafbfc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 250px;
+            background-color: #f3f4f6; /* Very light gray sidebar */
+            border-right: 1px solid #e5e7eb;
+            z-index: 1000;
+        }
+
+        .sidebar-header {
+            padding: 16px 24px;
+            display: flex;
+            align-items: flex-start;
+            height: 60px;
+        }
+
+        .sidebar-logo-icon {
+            background-color: #1d4ed8; /* Stronger blue */
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .sidebar-title-group {
+            display: flex;
+            flex-direction: column;
+            margin-top: -2px;
+        }
+
+        .sidebar-title {
+            color: #1d4ed8;
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 1.2;
+        }
+
+        .sidebar-subtitle {
+            color: #6b7280;
+            font-size: 11px;
+            margin-top: 4px;
+        }
+
+        .sidebar-nav {
+            padding: 16px 0;
+        }
+
+        .nav-item-link {
+            display: flex;
+            align-items: center;
+            padding: 8px 24px;
+            color: #4b5563;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 4px 12px;
+            border-radius: 6px;
+        }
+
+        .nav-item-link i {
+            margin-right: 12px;
+            font-size: 18px;
+            width: 20px;
+            text-align: center;
+            color: #6b7280;
+        }
+
+        .nav-item-link:hover {
+            background-color: #e5e7eb;
+            color: #111827;
+        }
+
+        .nav-item-link.active {
+            background-color: #dbeafe; /* Light blue */
+            color: #1d4ed8;
+        }
+
+        .nav-item-link.active i {
+            color: #1d4ed8;
+        }
+
+        /* Top Navbar */
+        .top-navbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 250px;
+            height: 60px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            z-index: 999;
+            justify-content: space-between;
+        }
+
+        .navbar-brand-text {
+            color: #1d4ed8;
+            font-weight: 700;
+            font-size: 18px;
+            margin-right: 32px;
+        }
+
+        .search-container {
+            position: relative;
+            width: 350px;
+        }
+
+        .search-container i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 6px 12px 6px 36px;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #374151;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #93c5fd;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+        }
+        
+        .search-input::placeholder {
+            color: #9ca3af;
+        }
+
+        .top-nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .top-nav-icons i {
+            font-size: 18px;
+            color: #4b5563;
+            cursor: pointer;
+        }
+
+        .user-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 250px;
+            padding: 90px 40px 40px 40px; /* Space for navbar */
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+        }
+
+        .page-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #111827;
+            margin: 0 0 4px 0;
+        }
+
+        .page-subtitle {
+            color: #6b7280;
+            font-size: 14px;
+            margin: 0;
+        }
+        
+        .btn-issue {
+            background-color: #1d4ed8;
+            border-color: #1d4ed8;
+            font-weight: 500;
+            font-size: 13px;
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+        
+        .btn-issue:hover {
+            background-color: #1e40af;
+            border-color: #1e40af;
+        }
+
+        /* Table Card */
+        .card-table {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+        }
+
+        .card-header-toolbar {
+            padding: 12px 20px;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fafafa;
+        }
+
+        .filter-select {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            padding: 6px 12px;
+            font-size: 13px;
+            color: #374151;
+            background: white;
+            cursor: pointer;
+            min-width: 160px;
+            justify-content: space-between;
+        }
+
+        .filter-select i.bi-funnel {
+            color: #9ca3af;
+            margin-right: 4px;
+        }
+
+        .pagination-info {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            color: #6b7280;
+        }
+
+        .pagination-controls {
+            display: flex;
+            gap: 4px;
+            margin-left: 16px;
+        }
+
+        .btn-page {
+            border: 1px solid #d1d5db;
+            background: white;
+            color: #374151;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .btn-page:hover {
+            background: #f3f4f6;
+        }
+
+        .table-custom {
+            margin-bottom: 0;
+            width: 100%;
+        }
+
+        .table-custom th {
+            font-size: 12px;
+            font-weight: 600;
+            color: #6b7280;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 16px 20px;
+            background-color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .table-custom td {
+            font-size: 13px;
+            color: #374151;
+            padding: 16px 20px;
+            border-bottom: 1px solid #e5e7eb;
+            vertical-align: middle;
+        }
+
+        .table-custom tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .status-badge {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .status-active {
+            background-color: #dbeafe; /* light blue */
+            color: #1e40af; /* dark blue */
+        }
+
+        .status-expired {
+            background-color: #fee2e2; /* light red */
+            color: #b91c1c; /* dark red */
+        }
+
+        .text-expired {
+            color: #dc2626;
+        }
+
+        .font-monospace-custom {
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+            color: #4b5563;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo-icon">
+                <i class="bi bi-shield-check"></i>
+            </div>
+            <div class="sidebar-title-group">
+                <span class="sidebar-title">LicensePro</span>
+                <span class="sidebar-title">Admin</span>
+                <span class="sidebar-subtitle">Enterprise Console</span>
+            </div>
+        </div>
+        <div class="sidebar-nav">
+            <a href="#" class="nav-item-link">
+                <i class="bi bi-grid-1x2"></i> Dashboard
+            </a>
+            <a href="#" class="nav-item-link active">
+                <i class="bi bi-key"></i> Licenses
+            </a>
+            <a href="#" class="nav-item-link">
+                <i class="bi bi-people"></i> Users
+            </a>
+            <a href="#" class="nav-item-link">
+                <i class="bi bi-buildings"></i> Clients
+            </a>
+        </div>
+    </div>
+
+    <!-- Top Navbar -->
+    <div class="top-navbar">
+        <div class="d-flex align-items-center">
+            <span class="navbar-brand-text">LicensePro</span>
+            <div class="search-container">
+                <i class="bi bi-search"></i>
+                <input type="text" class="search-input" placeholder="Search licenses...">
+            </div>
+        </div>
+        <div class="top-nav-icons">
+            <i class="bi bi-bell"></i>
+            <i class="bi bi-question-circle"></i>
+            <!-- Using a placeholder face to match the UI's user avatar -->
+            <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="User" class="user-avatar">
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="page-header">
+            <div>
+                <h1 class="page-title">Licenses</h1>
+                <p class="page-subtitle">Manage client license keys, statuses, and renewals.</p>
+            </div>
+            <div>
+                <button class="btn btn-primary btn-issue">
+                    <i class="bi bi-plus" style="margin-right: 2px;"></i> Issue New License
+                </button>
+            </div>
+        </div>
+
+        <div class="card-table">
+            <div class="card-header-toolbar">
+                <div class="filter-select">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-funnel"></i>
+                        <span>All Statuses</span>
+                    </div>
+                    <i class="bi bi-chevron-down" style="font-size: 10px;"></i>
+                </div>
+                <div class="pagination-info">
+                    <span style="margin-right: 16px;">Showing 1-10 of 245 licenses</span>
+                    <div class="pagination-controls">
+                        <button class="btn-page"><i class="bi bi-chevron-left" style="font-size: 10px;"></i></button>
+                        <button class="btn-page"><i class="bi bi-chevron-right" style="font-size: 10px;"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="table-custom">
+                    <thead>
+                        <tr>
+                            <th>License Key</th>
+                            <th>Client Name</th>
+                            <th>Status</th>
+                            <th>Type</th>
+                            <th>Expiration Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-monospace-custom">LP-ENT-8X9A-V2M4</td>
+                            <td class="fw-medium">Acme Corporation</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>Enterprise</td>
+                            <td>Dec 31, 2024</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="font-monospace-custom">LP-PRO-1B2C-3D4E</td>
+                            <td class="fw-medium">TechNova Solutions</td>
+                            <td><span class="status-badge status-expired">Expired</span></td>
+                            <td>Professional</td>
+                            <td class="text-expired">Oct 15, 2023</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="font-monospace-custom">LP-ENT-9Y8Z-7X6W</td>
+                            <td class="fw-medium">Global Industries Ltd.</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>Enterprise</td>
+                            <td>Jun 30, 2025</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="font-monospace-custom">LP-STD-5F6G-7H8J</td>
+                            <td class="fw-medium">RetailerX</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>Standard</td>
+                            <td>Mar 12, 2024</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="font-monospace-custom">LP-PRO-K9L8-M7N6</td>
+                            <td class="fw-medium">Design Studio Plus</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>Professional</td>
+                            <td>Nov 05, 2024</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
