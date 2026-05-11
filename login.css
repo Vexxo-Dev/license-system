@@ -1,0 +1,222 @@
+/* ============================================================
+   login.css – LicensePro Enterprise Login Page
+   ============================================================ */
+
+/* Base */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #eef0f4;
+    color: #1f2937;
+    margin: 0;
+    padding: 0;
+}
+
+/* Wrapper */
+.login-wrapper {
+    min-height: 100vh;
+    background-color: #eef0f4;
+    padding: 24px;
+}
+
+/* Card */
+.login-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 40px 36px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Branding */
+.login-logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1d4ed8;
+    margin: 0 0 4px 0;
+    letter-spacing: -0.5px;
+}
+
+.login-tagline {
+    color: #6b7280;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Form label */
+.login-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+/* Input group */
+.input-group-custom {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 15px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.login-input {
+    width: 100%;
+    padding: 9px 12px 9px 38px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #374151;
+    background: #ffffff;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.login-input::placeholder {
+    color: #bdc3cb;
+}
+
+.login-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.login-input.input-error {
+    border-color: #ef4444;
+}
+
+.login-input.input-error:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+/* Password toggle button */
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #9ca3af;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 2px 4px;
+    z-index: 2;
+    transition: color 0.15s;
+}
+
+.toggle-password:hover {
+    color: #4b5563;
+}
+
+/* Validation feedback */
+.invalid-feedback-custom {
+    font-size: 12px;
+    color: #ef4444;
+    margin-top: 5px;
+}
+
+/* Forgot Password link */
+.forgot-link {
+    font-size: 13px;
+    color: #1d4ed8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+    color: #1e40af;
+}
+
+/* Remember Me */
+.remember-check .form-check-input {
+    border-color: #d1d5db;
+    margin-top: 3px;
+}
+
+.remember-check .form-check-input:checked {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+.remember-check .form-check-input:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.remember-label {
+    font-size: 13px;
+    color: #4b5563;
+}
+
+/* Sign In Button */
+.btn-signin {
+    background-color: #1d4ed8;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    padding: 11px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: background-color 0.15s, transform 0.1s;
+    cursor: pointer;
+}
+
+.btn-signin:hover {
+    background-color: #1e40af;
+    color: #ffffff;
+}
+
+.btn-signin:active {
+    transform: scale(0.99);
+}
+
+.btn-signin:disabled {
+    background-color: #93c5fd;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Divider */
+.login-divider {
+    border-color: #e5e7eb;
+    margin: 24px 0 20px;
+}
+
+/* Support text */
+.support-text {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.support-link {
+    color: #1d4ed8;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.support-link:hover {
+    text-decoration: underline;
+    color: #1e40af;
+}
+
+/* Alert override */
+.alert-danger {
+    font-size: 13px;
+    padding: 10px 14px;
+    border-radius: 6px;
+}

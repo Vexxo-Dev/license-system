@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - LicensePro Enterprise Console</title>
+    <meta name="description" content="Sign in to LicensePro Enterprise Console to manage your licenses, users, and clients.">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <div class="login-wrapper d-flex align-items-center justify-content-center min-vh-100">
+        <div class="login-card">
+
+            <!-- Logo & Branding -->
+            <div class="login-brand text-center mb-4">
+                <h1 class="login-logo">LicensePro</h1>
+                <p class="login-tagline">Enterprise Console Access</p>
+            </div>
+
+            <!-- Alert (hidden by default, shown on error) -->
+            <div id="loginAlert" class="alert alert-danger d-none" role="alert">
+                <i class="bi bi-exclamation-circle me-2"></i>
+                <span id="loginAlertMsg">Invalid email or password. Please try again.</span>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" novalidate>
+
+                <!-- Work Email -->
+                <div class="mb-3">
+                    <label for="workEmail" class="form-label login-label">Work Email</label>
+                    <div class="input-group-custom">
+                        <span class="input-icon"><i class="bi bi-envelope"></i></span>
+                        <input
+                            type="email"
+                            id="workEmail"
+                            name="workEmail"
+                            class="form-control login-input"
+                            placeholder="admin@organization.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+                    <div class="invalid-feedback-custom d-none" id="emailError">
+                        Please enter a valid work email address.
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <label for="password" class="form-label login-label mb-0">Password</label>
+                        <a href="#" class="forgot-link" id="forgotPasswordLink">Forgot Password?</a>
+                    </div>
+                    <div class="input-group-custom mt-1">
+                        <span class="input-icon"><i class="bi bi-lock"></i></span>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            class="form-control login-input"
+                            placeholder="••••••••"
+                            autocomplete="current-password"
+                            required
+                        >
+                        <button type="button" class="toggle-password" id="togglePassword" aria-label="Toggle password visibility">
+                            <i class="bi bi-eye" id="togglePasswordIcon"></i>
+                        </button>
+                    </div>
+                    <div class="invalid-feedback-custom d-none" id="passwordError">
+                        Password is required.
+                    </div>
+                </div>
+
+                <!-- Remember Me -->
+                <div class="mb-4">
+                    <div class="form-check remember-check">
+                        <input class="form-check-input" type="checkbox" id="rememberMe" name="rememberMe">
+                        <label class="form-check-label remember-label" for="rememberMe">
+                            Remember me on this device
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Sign In Button -->
+                <button type="submit" class="btn btn-signin w-100" id="signInBtn">
+                    <span class="btn-text">Sign In</span>
+                    <i class="bi bi-arrow-right ms-2"></i>
+                    <span class="spinner-border spinner-border-sm d-none ms-2" role="status" id="signInSpinner"></span>
+                </button>
+
+            </form>
+
+            <!-- Divider -->
+            <hr class="login-divider">
+
+            <!-- Support Link -->
+            <p class="text-center support-text mb-0">
+                <i class="bi bi-question-circle me-1"></i>
+                Need access? <a href="mailto:it-support@organization.com" class="support-link" id="contactITSupport">Contact IT Support</a>
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="login.js"></script>
+</body>
+</html>
