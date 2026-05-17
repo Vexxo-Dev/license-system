@@ -1,0 +1,127 @@
+.navbar-brand-text {
+    color: #1d4ed8;
+    font-weight: 700;
+    font-size: 18px;
+    margin-right: 32px;
+}
+
+.top-nav-icons {
+    gap: 12px;
+}
+
+.account-dropdown {
+    display: flex;
+    align-items: center;
+}
+
+.account-menu-toggle {
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    color: #111827;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 38px;
+    padding: 4px 10px 4px 6px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.account-menu-toggle:hover,
+.account-menu-toggle:focus {
+    background: #f9fafb;
+    border-color: #d1d5db;
+}
+
+.account-menu-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.user-avatar-initials {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.account-menu-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.1;
+}
+
+.account-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.account-role {
+    font-size: 11px;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.top-nav-icons .account-chevron {
+    color: #6b7280;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.account-menu {
+    min-width: 240px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+    padding: 8px;
+}
+
+.account-menu-header {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 10px;
+}
+
+.account-menu-name {
+    color: #111827;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.account-menu-email {
+    color: #6b7280;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.account-menu-item {
+    align-items: center;
+    border-radius: 6px;
+    display: flex;
+    font-size: 13px;
+    gap: 8px;
+    padding: 8px 10px;
+}
+
+.top-nav-icons .account-menu-item i {
+    color: #6b7280;
+    cursor: pointer;
+    font-size: 15px;
+    width: 18px;
+}
+
+@media (max-width: 768px) {
+    .account-menu-text {
+        display: none;
+    }
+
+    .navbar-brand-text {
+        display: none;
+    }
+}
