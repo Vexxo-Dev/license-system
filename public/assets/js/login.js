@@ -45,7 +45,6 @@
 
   // ── Form submission
   loginForm.addEventListener('submit', function (e) {
-    e.preventDefault();
     hideAlert();
 
     const emailVal    = workEmail.value.trim();
@@ -68,7 +67,10 @@
       clearFieldError(password, passwordError);
     }
 
-    if (hasError) return;
+    if (hasError) {
+      e.preventDefault();
+      return;
+    }
 
     // Handle "remember me"
     if (rememberMe.checked) {
@@ -77,19 +79,8 @@
       localStorage.removeItem('lp_remembered_email');
     }
 
-    // Simulate authentication
+    // Allow the form to submit to login.php
     setLoadingState(true);
-
-    setTimeout(function () {
-      setLoadingState(false);
-
-      // Demo credentials check (replace with real API call)
-      if (emailVal === 'admin@organization.com' && passwordVal === 'password') {
-        window.location.href = 'dashboard.html';
-      } else {
-        showAlert('Invalid email or password. Please try again.');
-      }
-    }, 1200);
   });
 
   // ── Helpers
@@ -121,4 +112,5 @@
     signInBtn.disabled = loading;
     signInSpinner.classList.toggle('d-none', !loading);
   }
+
 })();
