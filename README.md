@@ -66,6 +66,29 @@ Password: password
 
 ## Project Structure
 
+## Architecture Style
+
+This project uses a simple PHP page-based monolith structure, not a full MVC framework.
+
+The code is organized by responsibility:
+
+- `public/*.php`: UI pages rendered by PHP.
+- `public/actions/`: form POST handlers for browser actions.
+- `public/api/`: JSON API endpoints for external apps and Postman.
+- `includes/`: shared backend helpers such as auth, database connection, API response helpers, and reusable layout components.
+- `public/assets/`: frontend CSS and JavaScript used by the PHP pages.
+- `database/`: schema and seed data.
+
+So the structure is best described as:
+
+```text
+PHP monolith with separated UI pages, action handlers, JSON API endpoints, shared backend includes, and frontend assets.
+```
+
+It is not strict MVC because there are no separate controller/model/view layers or routing framework. If the project grows, it can later be refactored into MVC by moving database logic into models, request handling into controllers, and page templates into views.
+
+## Folder Structure
+
 ```text
 license-system/
 ├── index.php
