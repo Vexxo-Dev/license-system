@@ -1,0 +1,280 @@
+{
+  "info": {
+    "_postman_id": "4873f16b-2ab7-4ff0-a10e-003b024f9775",
+    "name": "License System API",
+    "description": "Postman collection for the License System PHP JSON API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000/public",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@organization.com\",\n  \"password\": \"password\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/api_login.php",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "api_login.php"
+              ]
+            },
+            "description": "Validate user credentials. This API returns user details but does not issue an auth token in the baseline version."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "List Users",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/api_users.php",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "api_users.php"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"full_name\": \"Jane Doe\",\n  \"client_id\": 1,\n  \"email\": \"jane@example.com\",\n  \"role\": \"manager\",\n  \"status\": \"active\",\n  \"password\": \"Temp1234!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/api_users.php",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "api_users.php"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Clients",
+      "item": [
+        {
+          "name": "List Clients",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/api_clients.php",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "api_clients.php"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Client",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Northwind\",\n  \"industry\": \"Retail\",\n  \"status\": \"active\",\n  \"primary_contact_name\": \"Alicia King\",\n  \"primary_contact_email\": \"alicia@northwind.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/api_clients.php",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "api_clients.php"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Licenses",
+      "item": [
+        {
+          "name": "List Licenses",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/api_licenses.php",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "api_licenses.php"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create License",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"client_id\": 1,\n  \"type\": \"ENTERPRISE\",\n  \"status\": \"active\",\n  \"expires_at\": \"2026-12-31\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/api_licenses.php",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "api_licenses.php"
+              ]
+            },
+            "description": "Creates a license. Omit license_key to let the API generate one."
+          }
+        },
+        {
+          "name": "Create License With Custom Key",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"client_id\": 1,\n  \"type\": \"PROFESSIONAL\",\n  \"status\": \"active\",\n  \"expires_at\": \"2026-12-31\",\n  \"license_key\": \"LP-PRO-CUSTOM-0001\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/api_licenses.php",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "api_licenses.php"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

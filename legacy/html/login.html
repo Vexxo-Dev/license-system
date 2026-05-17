@@ -32,7 +32,7 @@
             </div>
 
             <!-- Login Form -->
-            <form id="loginForm" novalidate>
+            <form id="loginForm" method="post" action="login.php" novalidate>
 
                 <!-- Work Email -->
                 <div class="mb-3">
@@ -42,7 +42,7 @@
                         <input
                             type="email"
                             id="workEmail"
-                            name="workEmail"
+                            name="email"
                             class="form-control login-input"
                             placeholder="admin@organization.com"
                             autocomplete="email"
