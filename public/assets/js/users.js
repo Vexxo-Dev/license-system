@@ -119,5 +119,53 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Handle Client Company visibility based on Role selection
+    const addUserRole = document.getElementById('addUserRole');
+    const addUserClientDiv = document.getElementById('addUserClientDiv');
+    const editRoleElement = document.getElementById('editRole');
+    const editUserClientDiv = document.getElementById('editUserClientDiv');
+
+    function toggleClientFieldVisibility(roleField, clientDiv, isEditMode = false) {
+        if (!roleField || !clientDiv) return;
+
+        const roleValue = roleField.value.trim();
+        // Hide if: role is empty (not selected) OR role is admin
+        const shouldHide = roleValue === '' || roleValue === 'admin';
+        clientDiv.style.display = shouldHide ? 'none' : 'block';
+
+        if (roleValue === 'admin') {
+            // Reset client selection to "No client" when admin is selected
+            const clientSelect = clientDiv.querySelector('select');
+            if (clientSelect) {
+                clientSelect.value = '';
+            }
+        }
+    }
+
+    if (addUserRole) {
+        // Set initial state on page load (hidden by default since no role selected)
+        toggleClientFieldVisibility(addUserRole, addUserClientDiv, false);
+
+        // Listen to role changes in Add User modal
+        addUserRole.addEventListener('change', function () {
+            toggleClientFieldVisibility(addUserRole, addUserClientDiv, false);
+        });
+    }
+
+    if (editRoleElement) {
+        // Set initial state when edit modal is shown
+        const editModal = document.getElementById('editUserModal');
+        if (editModal) {
+            editModal.addEventListener('shown.bs.modal', function () {
+                toggleClientFieldVisibility(editRoleElement, editUserClientDiv, true);
+            });
+        }
+
+        // Listen to role changes in Edit User modal
+        editRoleElement.addEventListener('change', function () {
+            toggleClientFieldVisibility(editRoleElement, editUserClientDiv, true);
+        });
+    }
+
     applyFilters();
 });

@@ -33,9 +33,6 @@ function role_badge(string $role): string
     if ($role === 'admin') {
         return 'badge-admin';
     }
-    if ($role === 'manager') {
-        return 'badge-manager';
-    }
     return 'badge-viewer';
 }
 
@@ -92,7 +89,6 @@ function format_login(?string $timestamp): string
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#" data-role="all">All Roles</a></li>
                         <li><a class="dropdown-item" href="#" data-role="admin">Admin</a></li>
-                        <li><a class="dropdown-item" href="#" data-role="manager">Manager</a></li>
                         <li><a class="dropdown-item" href="#" data-role="viewer">Viewer</a></li>
                     </ul>
                 </div>
@@ -241,20 +237,19 @@ function format_login(?string $timestamp): string
                             <input type="email" class="form-control" name="email" id="editEmail" required>
                         </div>
                         <div class="mb-3">
+                            <label class="form-label">Role</label>
+                            <select class="form-select" name="role" id="editRole">
+                                <option value="admin">Admin</option>
+                                <option value="viewer">Viewer</option>
+                            </select>
+                        </div>
+                        <div class="mb-3" id="editUserClientDiv">
                             <label class="form-label">Client Company</label>
                             <select class="form-select" name="client_id" id="editUserClientId">
                                 <option value="">No client</option>
                                 <?php foreach ($clients as $client): ?>
                                     <option value="<?php echo (int) $client['id']; ?>"><?php echo h($client['name']); ?></option>
                                 <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Role</label>
-                            <select class="form-select" name="role" id="editRole">
-                                <option value="admin">Admin</option>
-                                <option value="manager">Manager</option>
-                                <option value="viewer">Viewer</option>
                             </select>
                         </div>
                         <div class="mb-3">
@@ -297,20 +292,20 @@ function format_login(?string $timestamp): string
                             <input type="email" class="form-control" name="email" required>
                         </div>
                         <div class="mb-3">
+                            <label class="form-label">Role</label>
+                            <select class="form-select" id="addUserRole" name="role">
+                                <option value="">-- Select a role --</option>
+                                <option value="admin">Admin</option>
+                                <option value="viewer">Viewer</option>
+                            </select>
+                        </div>
+                        <div class="mb-3" id="addUserClientDiv">
                             <label class="form-label">Client Company</label>
-                            <select class="form-select" name="client_id">
+                            <select class="form-select" id="addUserClientId" name="client_id">
                                 <option value="">No client</option>
                                 <?php foreach ($clients as $client): ?>
                                     <option value="<?php echo (int) $client['id']; ?>"><?php echo h($client['name']); ?></option>
                                 <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Role</label>
-                            <select class="form-select" name="role">
-                                <option value="admin">Admin</option>
-                                <option value="manager">Manager</option>
-                                <option value="viewer" selected>Viewer</option>
                             </select>
                         </div>
                         <div class="mb-3">
