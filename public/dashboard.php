@@ -143,6 +143,7 @@ function dashboard_license_type_label(string $type): string
 <body>
 
     <?php render_sidebar('dashboard'); ?>
+    <?php render_header(); ?>
 
     <div class="main-content">
 
