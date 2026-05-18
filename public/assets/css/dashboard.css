@@ -221,7 +221,7 @@ body {
 /* ======================== MAIN CONTENT ======================== */
 .main-content {
     margin-left: 220px;
-    padding: 80px 32px 40px 32px;
+    padding: 2rem;
 }
 
 .page-header {

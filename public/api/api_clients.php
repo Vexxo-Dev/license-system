@@ -4,7 +4,7 @@
 require __DIR__ . '/../../includes/db.php';
 require __DIR__ . '/../../includes/api.php';
 
-
+api_require_auth();
 
 $db = db_connection();
 $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';

@@ -4,6 +4,8 @@
 require __DIR__ . '/../../includes/db.php';
 require __DIR__ . '/../../includes/api.php';
 
+api_require_auth();
+
 $db = db_connection();
 $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 
@@ -34,7 +36,7 @@ if ($fullName === '' || $email === '') {
     api_send(['ok' => false, 'error' => 'Full name and email are required.'], 400);
 }
 
-if (!in_array($role, ['admin', 'manager', 'viewer'], true)) {
+if (!in_array($role, ['admin', 'viewer'], true)) {
     $role = 'viewer';
 }
 
