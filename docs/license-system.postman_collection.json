@@ -2,7 +2,7 @@
   "info": {
     "_postman_id": "4873f16b-2ab7-4ff0-a10e-003b024f9775",
     "name": "License System API",
-    "description": "Postman collection for the License System PHP JSON API.",
+    "description": "Postman collection for the License System PHP JSON API. IMPORTANT: All endpoints except Login require authentication (active session).",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
@@ -49,7 +49,7 @@
                 "api_login.php"
               ]
             },
-            "description": "Validate user credentials. This API returns user details but does not issue an auth token in the baseline version."
+            "description": "REQUIRED: Authenticate user credentials to establish a session. Must be called first before accessing other endpoints."
           }
         }
       ]
@@ -76,7 +76,8 @@
                 "api",
                 "api_users.php"
               ]
-            }
+            },
+            "description": "Requires authentication. Returns list of all users."
           }
         },
         {
@@ -95,7 +96,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"full_name\": \"Jane Doe\",\n  \"client_id\": 1,\n  \"email\": \"jane@example.com\",\n  \"role\": \"manager\",\n  \"status\": \"active\",\n  \"password\": \"Temp1234!\"\n}",
+              "raw": "{\n  \"full_name\": \"Jane Doe\",\n  \"client_id\": 1,\n  \"email\": \"jane@example.com\",\n  \"role\": \"viewer\",\n  \"status\": \"active\",\n  \"password\": \"Temp1234!\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -111,7 +112,8 @@
                 "api",
                 "api_users.php"
               ]
-            }
+            },
+            "description": "Requires authentication. Available roles: admin, viewer"
           }
         }
       ]
@@ -138,7 +140,8 @@
                 "api",
                 "api_clients.php"
               ]
-            }
+            },
+            "description": "Requires authentication. Returns list of all clients."
           }
         },
         {
@@ -173,7 +176,8 @@
                 "api",
                 "api_clients.php"
               ]
-            }
+            },
+            "description": "Requires authentication. Creates a new client."
           }
         }
       ]
@@ -200,7 +204,8 @@
                 "api",
                 "api_licenses.php"
               ]
-            }
+            },
+            "description": "Requires authentication. Returns list of all licenses."
           }
         },
         {
@@ -236,7 +241,7 @@
                 "api_licenses.php"
               ]
             },
-            "description": "Creates a license. Omit license_key to let the API generate one."
+            "description": "Requires authentication. Creates a license. Omit license_key to let the API generate one."
           }
         },
         {
@@ -271,7 +276,8 @@
                 "api",
                 "api_licenses.php"
               ]
-            }
+            },
+            "description": "Requires authentication. Creates a license with a custom key."
           }
         }
       ]
