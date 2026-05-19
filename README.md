@@ -178,3 +178,11 @@ Default Postman variable:
 ```text
 base_url = http://localhost:8000/public
 ```
+
+## Contributors
+
+[![Contributors](https://contrib.rocks/image?repo=Vexxo-Dev/license-system)](https://github.com/Vexxo-Dev/license-system/graphs/contributors)
+
+## Stargazers
+
+[![Stargazers](https://reporoster.com/stars/Vexxo-Dev/license-system)](https://github.com/Vexxo-Dev/license-system/stargazers)
