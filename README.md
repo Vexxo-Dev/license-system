@@ -185,4 +185,4 @@ base_url = http://localhost:8000/public
 
 ## Stargazers
 
-[![Stargazers](https://reporoster.com/stars/Vexxo-Dev/license-system)](https://github.com/Vexxo-Dev/license-system/stargazers)
+[![Stargazers repo roster for @Vexxo-Dev/license-system](https://reporoster.com/stars/dark/Vexxo-Dev/license-system)](https://github.com/Vexxo-Dev/license-system/stargazers)
