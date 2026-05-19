@@ -14,13 +14,13 @@ A PHP and MySQL license management system with pages for login, dashboard, users
 
 2. Import the database schema:
 
-   ```powershell
+   ```bash
    mysql -u root < database\schema.sql
    ```
 
    If your MySQL user has a password:
 
-   ```powershell
+   ```bash
    mysql -u root -p < database\schema.sql
    ```
 
@@ -185,4 +185,4 @@ base_url = http://localhost:8000/public
 
 ## Stargazers
 
-[![Stargazers repo roster for @Vexxo-Dev/license-system](https://reporoster.com/stars/dark/Vexxo-Dev/license-system)](https://github.com/Vexxo-Dev/license-system/stargazers)
+[![Stargazers](https://stargazers.yassintube126.workers.dev/Vexxo-Dev/license-system)](https://github.com/Vexxo-Dev/license-system/stargazers)
